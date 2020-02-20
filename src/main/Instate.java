@@ -26,6 +26,7 @@ public class Instate extends Student {
 
     /**
      * Calculates the tuition to be paid by the student.
+     * @author Thomas Brewer
      * @return The balance that needs to be paid by the student
      */
     public int tuitionDue() {
