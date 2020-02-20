@@ -6,9 +6,9 @@ package main;
  */
 
 public abstract class Student implements Comparable {
-    private String fname;
-    private String lname;
-    protected int  credit;
+    private String fname;  // Holds this Student's first name
+    private String lname;  // Holds this Student's last name
+    protected int  credit; // Holds the amount of credits that this Student is taking this semester
 
     /**
      * Constructor for Student, initializes the fname, lname, and credit attributes in an instance of Student.
@@ -30,13 +30,12 @@ public abstract class Student implements Comparable {
      * @return 0 if the instances are equal, 1 if this instance is greater, -1 if obj is greater
      */
     public int compareTo(Object obj) {
+        // Checks if obj is an instance of Student and throws an Exception if it isn't
         if(!(obj instanceof Student))
-            // maybe throw an exception here idk
-            return -1;
+            throw new IllegalArgumentException("Parameter 'obj' must be of type 'Student'.");
+        // Otherwise, cast obj to type Student and sum the return values of comparing fname and lname
         Student otherStudent = (Student)obj;
-        int fnameComp = fname.compareTo(otherStudent.fname);
-        int lnameComp = lname.compareTo(otherStudent.lname);
-        return fnameComp == lnameComp ? 0 : fnameComp > lnameComp ? 1 : -1;
+        return fname.compareTo(otherStudent.fname) + lname.compareTo(otherStudent.lname);
     }
 
     @Override
