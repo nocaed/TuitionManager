@@ -5,5 +5,6 @@ package main;
  * @author Michael McLaughlin
  */
 
-public class Outstate {
+public class Outstate extends Student {
+
 }

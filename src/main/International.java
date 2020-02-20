@@ -5,5 +5,6 @@ package main;
  * @author Michael McLaughlin
  */
 
-public class International {
+public class International extends Student {
+
 }
