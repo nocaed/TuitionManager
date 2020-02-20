@@ -6,5 +6,6 @@ package main;
  */
 
 public class Instate extends Student {
-
+    private int funds;
+    private final int PRICE_PER_CREDIT = 433;
 }
