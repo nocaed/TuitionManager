@@ -6,9 +6,11 @@ package main;
  */
 
 public abstract class Student implements Comparable {
-    private String fname;  // Holds this Student's first name
-    private String lname;  // Holds this Student's last name
-    protected int  credit; // Holds the amount of credits that this Student is taking this semester
+    private String    fname;            // Holds this Student's first name
+    private String    lname;            // Holds this Student's last name
+    protected int     credit;           // Holds the amount of credits that this Student is taking this semester
+    private final int PART_TIME = 846;  // Holds the university fee for part time students
+    private final int FULL_TIME = 1441; // Holds the university fee for full time students
 
     /**
      * Constructor for Student, initializes the fname, lname, and credit attributes in an instance of Student.
