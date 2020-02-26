@@ -28,6 +28,7 @@ public class International extends Student {
      * @author Thomas Brewer
      * @return The balance that needs to be paid by the student
      */
+    @Override
     public int tuitionDue() {
         // Returns the international student fee + the full time university fee if the student is an exchange student
         // Otherwise, returns the international student fee + the student's enrollment status and the credit cost

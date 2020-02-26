@@ -29,6 +29,7 @@ public class Instate extends Student {
      * @author Thomas Brewer
      * @return The balance that needs to be paid by the student
      */
+    @Override
     public int tuitionDue() {
         // Calculates the university fee based on the student's full/part time status
         int universityFee = credit >= 12 ? FULL_TIME : PART_TIME;
