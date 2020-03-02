@@ -17,37 +17,88 @@ public class TuitionManager {
         while(!done) {
             input = stdin.nextLine();
             params = input.split("\\s+");
-            command = input.charAt(0);
+            char command = input.charAt(0);
             switch(command) {
                 case 'I': case 'O': case 'N':
-                    // add here
+                    add(input, command);
                     break;
                 case 'R':
-                    // remove here
+                    remove(input);
                     break;
                 case 'P':
-                    // print here
+                    print();
                     break;
                 case 'Q':
-                    // terminate here
+                    done = true;
+                    System.out.println("Program terminated");
                     break;
                 default:
-                    // invalid command
+                    System.out.println("Sorry, command '" + command + "' is not recognized!\n" +
+                                        "Please use one of the following commands: [I, O, N, R, P, Q]");
                     break;
             }
-            System.out.println("Program terminated");
+
         }
     }
 
     private void add(String member, char studentType) {
-        // add a new Student here
+        switch (studentType) {
+            case 'I': {
+                String[] studentInfo = member.split(" ");
+
+                String fName = studentInfo[1];
+                String lName = studentInfo[2];
+                int credits = Integer.parseInt(studentInfo[3]);
+                int funding = Integer.parseInt(studentInfo[4]);
+
+                Student student = new Instate(fName, lName, credits, funding);
+
+                cs213.add(student);
+                break;
+            }
+            case 'O': {
+                String[] studentInfo = member.split(" ");
+
+                String fName = studentInfo[1];
+                String lName = studentInfo[2];
+                int credits = Integer.parseInt(studentInfo[3]);
+                char triState = studentInfo[4].charAt(0);
+
+                Student student = new Outstate(fName, lName, credits, triState);
+
+                cs213.add(student);
+                break;
+            }
+            case 'N': {
+                String[] studentInfo = member.split(" ");
+
+                String fName = studentInfo[1];
+                String lName = studentInfo[2];
+                int credits = Integer.parseInt(studentInfo[3]);
+                char exchangeStudent = studentInfo[4].charAt(0);
+
+                Student student = new International(fName, lName, credits, exchangeStudent);
+
+                cs213.add(student);
+                break;
+            }
+            default:
+                break;
+        }
     }
 
     private void remove(String member) {
-        // remove a Student here
+        String[] studentInfo = member.split(" ");
+
+        String fName = studentInfo[1];
+        String lName = studentInfo[2];
+
+        Student studentToRemove = new Instate(fName, lName, 0, 0);
+
+        cs213.remove(studentToRemove);
     }
 
     private void print() {
-        // print all Students here
+        cs213.print();
     }
 }

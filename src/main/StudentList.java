@@ -1,4 +1,5 @@
 package main;
+import java.text.NumberFormat;
 
 /**
  * @author Thomas Brewer
@@ -88,8 +89,8 @@ public class StudentList {
         // Decrements the number of students
         numStudents--;
         // Puts the end of students into the target removal index, and removes said reference at the end of students
-        students[searchIndex] = students[numStudents];
-        students[numStudents] = null;
+        students[searchIndex] = students[numStudents - 1];
+        students[numStudents - 1] = null;
         // Returns true since a Student was found
         return true;
     }
@@ -99,8 +100,13 @@ public class StudentList {
      * @author Thomas Brewer
      */
     public void print() {
+        NumberFormat myFormat = NumberFormat.getInstance();
+        myFormat.setGroupingUsed(true);
+
         for(Student student : students) {
-            System.out.println(student);
+            if (student != null) {
+                System.out.println(student + " tuition due: $" + myFormat.format(student.tuitionDue()));
+            }
         }
     }
 }
