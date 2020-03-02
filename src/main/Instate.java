@@ -35,4 +35,9 @@ public class Instate extends Student {
         int universityFee = credit >= 12 ? FULL_TIME : PART_TIME;
         return credit * PRICE_PER_CREDIT - funds + universityFee;
     }
+
+    public static void main(String[] args) {
+        Instate wilson = new Instate("Wilson", "Long", 8, 1000);
+        System.out.println("Wilson's tuition due: $" + wilson.tuitionDue());
+    }
 }

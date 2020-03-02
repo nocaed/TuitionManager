@@ -36,4 +36,9 @@ public class Outstate extends Student {
         int tuitionDiscountPerCredit = credit >= 12 && tristate ? 200 : 0;
         return credit * (PRICE_PER_CREDIT - tuitionDiscountPerCredit) + universityFee;
     }
+
+    public static void main(String[] args) {
+        Outstate student = new Outstate("Good", "Man", 12, 'F');
+        System.out.println("Good's tuition due: $" + student.tuitionDue());
+    }
 }

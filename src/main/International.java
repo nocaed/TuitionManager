@@ -34,4 +34,9 @@ public class International extends Student {
         // Otherwise, returns the international student fee + the student's enrollment status and the credit cost
         return STUDENT_FEE + (exchange ? FULL_TIME : (credit >= 12 ? FULL_TIME : PART_TIME) + credit * PRICE_PER_CREDIT);
     }
+
+    public static void main(String[] args) {
+        International student = new International("David", "Lee", 12, 'F');
+        System.out.println("David's tuition due: $" + student.tuitionDue());
+    }
 }
