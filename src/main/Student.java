@@ -39,7 +39,8 @@ public abstract class Student implements Comparable {
             throw new IllegalArgumentException("Parameter 'obj' must be of type 'Student'.");
         // Otherwise, cast obj to type Student and sum the return values of comparing fname and lname
         Student otherStudent = (Student)obj;
-        return fname.compareTo(otherStudent.fname) + lname.compareTo(otherStudent.lname);
+        int result = Math.abs(fname.compareTo(otherStudent.fname)) + Math.abs(lname.compareTo(otherStudent.lname));
+        return result;
     }
 
     @Override

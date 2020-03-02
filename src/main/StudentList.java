@@ -86,11 +86,12 @@ public class StudentList {
         // Returns false if s is not found
         if(searchIndex == NOT_FOUND)
             return false;
-        // Decrements the number of students
-        numStudents--;
+
         // Puts the end of students into the target removal index, and removes said reference at the end of students
         students[searchIndex] = students[numStudents - 1];
         students[numStudents - 1] = null;
+        // Decrements the number of students
+        numStudents--;
         // Returns true since a Student was found
         return true;
     }

@@ -100,5 +100,6 @@ public class TuitionManager {
 
     private void print() {
         cs213.print();
+        System.out.println("Done");
     }
 }
