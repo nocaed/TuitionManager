@@ -66,6 +66,10 @@ public class StudentList {
      * @param s The target to add to the array
      */
     public void add(Student s) {
+        if (this.find(s) > -1) {
+            System.out.println("Cannot add a student already in the list.");
+            return;
+        }
         // Grows students if it is full
         if(isFull())
             grow();
@@ -84,8 +88,10 @@ public class StudentList {
         // Searches for s
         int searchIndex = find(s);
         // Returns false if s is not found
-        if(searchIndex == NOT_FOUND)
+        if(searchIndex == NOT_FOUND) {
+            System.out.println("Student not found.");
             return false;
+        }
 
         // Puts the end of students into the target removal index, and removes said reference at the end of students
         students[searchIndex] = students[numStudents - 1];
@@ -101,6 +107,11 @@ public class StudentList {
      * @author Thomas Brewer
      */
     public void print() {
+        if (this.numStudents == 0) {
+            System.out.println("No students added yet.");
+            return;
+        }
+
         NumberFormat myFormat = NumberFormat.getInstance();
         myFormat.setGroupingUsed(true);
 

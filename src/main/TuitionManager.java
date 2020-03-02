@@ -49,7 +49,15 @@ public class TuitionManager {
                 String fName = studentInfo[1];
                 String lName = studentInfo[2];
                 int credits = Integer.parseInt(studentInfo[3]);
+                if (credits <= 0) {
+                    System.out.println("Please re-enter student info with a positive number of credits.");
+                    return;
+                }
                 int funding = Integer.parseInt(studentInfo[4]);
+
+                if (credits < 12) {
+                    funding = 0;
+                }
 
                 Student student = new Instate(fName, lName, credits, funding);
 
@@ -62,6 +70,10 @@ public class TuitionManager {
                 String fName = studentInfo[1];
                 String lName = studentInfo[2];
                 int credits = Integer.parseInt(studentInfo[3]);
+                if (credits <= 0) {
+                    System.out.println("Please re-enter student info with a positive number of credits.");
+                    return;
+                }
                 char triState = studentInfo[4].charAt(0);
 
                 Student student = new Outstate(fName, lName, credits, triState);
@@ -75,6 +87,10 @@ public class TuitionManager {
                 String fName = studentInfo[1];
                 String lName = studentInfo[2];
                 int credits = Integer.parseInt(studentInfo[3]);
+                if (credits <= 0) {
+                    System.out.println("Please re-enter student info with a positive number of credits.");
+                    return;
+                }
                 char exchangeStudent = studentInfo[4].charAt(0);
 
                 Student student = new International(fName, lName, credits, exchangeStudent);
@@ -100,6 +116,5 @@ public class TuitionManager {
 
     private void print() {
         cs213.print();
-        System.out.println("Done");
     }
 }
