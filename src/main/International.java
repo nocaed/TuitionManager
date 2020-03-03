@@ -1,6 +1,7 @@
 package main;
 
 /**
+ * Class for students attending under international tuition.
  * @author Thomas Brewer
  * @author Michael McLaughlin
  */

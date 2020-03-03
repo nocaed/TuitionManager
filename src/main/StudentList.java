@@ -2,6 +2,7 @@ package main;
 import java.text.NumberFormat;
 
 /**
+ * Class for managing a dynamic array holding a collection of students.
  * @author Thomas Brewer
  * @author Michael McLaughlin
  */

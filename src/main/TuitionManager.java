@@ -1,6 +1,7 @@
 package main;
 import java.util.Scanner;
 /**
+ * The tuition manager class performs the bulk of interaction with the user.  All I/O is handled in this class.
  * @author Thomas Brewer
  * @author Michael McLaughlin
  */
@@ -9,6 +10,9 @@ public class TuitionManager {
     Scanner stdin = new Scanner(System.in);
     StudentList cs213 = new StudentList();
 
+    /**
+     * Begins a dialogue with the user, accepting commands and giving responses.
+     */
     public void run() {
         String input;
         String[] params;
@@ -41,6 +45,11 @@ public class TuitionManager {
         }
     }
 
+    /**
+     * Adds a new student to the running student list.
+     * @param member String containing info on the student to add
+     * @param studentType A character representing the type of student to add: In-state, Out-of-state, or international.
+     */
     private void add(String member, char studentType) {
         switch (studentType) {
             case 'I': {
@@ -103,6 +112,10 @@ public class TuitionManager {
         }
     }
 
+    /**
+     * Removes a given student from the running student list.
+     * @param member String containing info on the member to remove.
+     */
     private void remove(String member) {
         String[] studentInfo = member.split(" ");
 
@@ -114,6 +127,9 @@ public class TuitionManager {
         cs213.remove(studentToRemove);
     }
 
+    /**
+     * Prints the running student list to the user.
+     */
     private void print() {
         cs213.print();
     }

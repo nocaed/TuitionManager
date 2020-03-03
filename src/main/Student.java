@@ -1,6 +1,7 @@
 package main;
 
 /**
+ * Container class containing data related to all students.
  * @author Thomas Brewer
  * @author Michael McLaughlin
  */
