@@ -1,5 +1,3 @@
-package main;
-
 /**
  * Class for students attending under in state tuition.
  * @author Thomas Brewer

@@ -1,4 +1,3 @@
-package main;
 /**
  * This is the main method of the program, and begins the tuition managing process.
  * @author Thomas Brewer
