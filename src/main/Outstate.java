@@ -36,6 +36,15 @@ public class Outstate extends Student {
         return credit * (PRICE_PER_CREDIT - tuitionDiscountPerCredit) + universityFee;
     }
 
+    @Override
+    /**
+     * @author Thomas Brewer
+     * @return The Student toString plus a statement stating if the student is from the tristate
+     */
+    public String toString() {
+        return super.toString() + " is " + (tristate ? "" : "not") + " a tristate student";
+    }
+
     public static void main(String[] args) {
         Outstate student = new Outstate("Good", "Man", 12, 'F');
         System.out.println("Good's tuition due: $" + student.tuitionDue());

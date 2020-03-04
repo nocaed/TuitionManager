@@ -34,6 +34,15 @@ public class International extends Student {
         return STUDENT_FEE + (exchange ? FULL_TIME : (credit >= 12 ? FULL_TIME : PART_TIME) + credit * PRICE_PER_CREDIT);
     }
 
+    @Override
+    /**
+     * @author Thomas Brewer
+     * @return Returns the super toString plus a statement showing if the student is an exchange student
+     */
+    public String toString() {
+        return super.toString() + (exchange ? " is " : " is not ") + "an exchange student.";
+    }
+
     public static void main(String[] args) {
         International student = new International("David", "Lee", 12, 'F');
         System.out.println("David's tuition due: $" + student.tuitionDue());

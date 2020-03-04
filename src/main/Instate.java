@@ -35,6 +35,15 @@ public class Instate extends Student {
         return credit * PRICE_PER_CREDIT - funds + universityFee;
     }
 
+    @Override
+    /**
+     * @author Thomas Brewer
+     * @return The Student toString plus the amount of funds the instate student has
+     */
+    public String toString() {
+        return super.toString() + " has " + funds + " funds.";
+    }
+
     public static void main(String[] args) {
         Instate wilson = new Instate("Wilson", "Long", 8, 1000);
         System.out.println("Wilson's tuition due: $" + wilson.tuitionDue());
